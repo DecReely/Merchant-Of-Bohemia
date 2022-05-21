@@ -1,21 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace MerchantOfBohemia
+namespace MerchantOfBohemia.Items
 {
-    public class Item : MonoBehaviour
+    public class Item : ScriptableObject
     {
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] private int id;
+        [SerializeField] private string itemName;
+        [SerializeField] private int baseValue;
+        [SerializeField] private Sprite itemIcon;
+        [SerializeField] private GameObject itemPrefab;
+        [SerializeField] private ItemType itemType;
+
+        private enum ItemType
         {
-        
+            Food,
+            Transport,
+            Material,
+            Luxury
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

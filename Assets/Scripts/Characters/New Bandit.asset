@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68184d96b1bf40c5bb1d40ed21839ae4, type: 3}
   m_Name: New Bandit
   m_EditorClassIdentifier: 
-  _gameObjectPrefab: {fileID: 0}
-  _name: 
-  _partySize: 0
-  _fightPower: 0
-  _level: 0
-  _recruitable: 0
+  inventory:
+  - {fileID: 11400000, guid: d8d6a6b8ccc248140a472b75c48228dc, type: 2}
+  - {fileID: 11400000, guid: 87f833485521bf34e86a373ea6fd7ff9, type: 2}
+  - {fileID: 11400000, guid: 1b8198e62edfb14438a20af819654d8b, type: 2}
+  gameObjectPrefab: {fileID: 0}
+  characterName: 
+  partySize: 0
+  fightPower: 0
+  level: 0
+  recruitable: 0
