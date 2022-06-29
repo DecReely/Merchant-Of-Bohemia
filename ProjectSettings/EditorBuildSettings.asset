@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CharacterSelectionMenu.unity
+    path: Assets/[GAME]/Scenes/CharacterSelectionMenu.unity
     guid: 16693450f166ae74695f2c7aac4c6e82
   - enabled: 1
-    path: Assets/Scenes/CampAndRecruitCustomizationMenu.unity
+    path: Assets/[GAME]/Scenes/CampAndRecruitCustomizationMenu.unity
     guid: 34faf431d4a162040b25c475334c2527
   - enabled: 1
-    path: Assets/Scenes/SkillAssignmentMenu.unity
+    path: Assets/[GAME]/Scenes/SkillAssignmentMenu.unity
     guid: c577a29c7c738464389a6f770087ccdf
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/[GAME]/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
