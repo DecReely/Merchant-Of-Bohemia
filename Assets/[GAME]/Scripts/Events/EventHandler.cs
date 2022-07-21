@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace MerchantOfBohemia
 {
@@ -52,7 +53,55 @@ namespace MerchantOfBohemia
         }
         
         #endregion
+
+        #region PlayerInputs
         
+        // Pointer Click
+        public static event Action<Vector3> PointerClickEvent;
+
+        public static void CallPointerClickEvent(Vector3 mousePosition)
+        {
+            PointerClickEvent?.Invoke(mousePosition);
+        }
         
+        // Player Selected
+        
+        public static event Action<GameObject> PlayerSelectedEvent;
+
+        public static void CallPlayerSelectedEvent(GameObject player)
+        {
+            PlayerSelectedEvent?.Invoke(player);
+        }
+        
+        // Terrain Selected
+
+        public static event Action<GameObject> TerrainSelectedEvent;
+
+        public static void CallTerrainSelectedEvent(GameObject hex)
+        {
+            TerrainSelectedEvent?.Invoke(hex);
+        }
+
+        #endregion
+
+        #region Movement
+        
+        // Movement Started
+        public static event Action<Unit> MovementStartedEvent;
+
+        public static void CallMovementStartedEvent(Unit playerMovement)
+        {
+            MovementStartedEvent?.Invoke(playerMovement);
+        }
+
+        // Movement Finished
+        public static event Action<Unit> MovementFinishedEvent;
+
+        public static void CallMovementFinishedEvent(Unit playerMovement)
+        {
+            MovementFinishedEvent?.Invoke(playerMovement);
+        }
+        
+        #endregion
     }
 }

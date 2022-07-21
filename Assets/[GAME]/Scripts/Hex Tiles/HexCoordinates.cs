@@ -11,14 +11,14 @@ namespace MerchantOfBohemia
         public const float XOffset = 4.3f, YOffset = 1, ZOffset = 5f;
 
         [Header("Offset Coordinates")] [SerializeField]
-        private Vector3Int _offsetCoordinates;
+        private Vector3Int offsetCoordinates;
 
         private void Awake()
         {
-            _offsetCoordinates = ConvertPositionToOffset(transform.position);
+            offsetCoordinates = ConvertPositionToOffset(transform.position);
         }
 
-        private Vector3Int ConvertPositionToOffset(Vector3 position)
+        public static Vector3Int ConvertPositionToOffset(Vector3 position)
         {
             int x = Mathf.RoundToInt(position.x / XOffset);
             int y = Mathf.RoundToInt(position.y / YOffset);
@@ -29,7 +29,7 @@ namespace MerchantOfBohemia
 
         public Vector3Int GetHexCoordinates()
         {
-            return _offsetCoordinates;
+            return offsetCoordinates;
         }
     }
 }

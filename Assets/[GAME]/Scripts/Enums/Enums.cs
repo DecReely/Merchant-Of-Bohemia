@@ -2,6 +2,20 @@ namespace MerchantOfBohemia
 {
     public class Enums
     {
+        public enum GameState //sonra başka stateler eklenebilir.
+        {
+            Idle,
+            Traveling
+        }
+        
+        public enum HexType
+        {
+            Road,
+            Obstacle,
+            Location,
+            none
+        }
+        
         public enum Season
         {
             Spring,

@@ -15,13 +15,6 @@ namespace MerchantOfBohemia
             {
                 _hexTileDictionary[hex.HexCoordinates] = hex;
             }
-
-            List<Vector3Int> neighbours = GetNeighboursFor(new Vector3Int(-3, 0, 0));
-            Debug.Log("Neighbours for (-3,0,0) are: ");
-            foreach (Vector3Int neighbour in neighbours)
-            {
-                Debug.Log(neighbour);
-            }
         }
 
         public Hex GetTileAt(Vector3Int hexCoordinates)
@@ -72,6 +65,13 @@ namespace MerchantOfBohemia
             
             public static List<Vector3Int> GetDirectionList(int x)
                 => x % 2 == 0 ? DirectionsOffsetEven : DirectionsOffsetOdd;
+        }
+
+        public Vector3Int GetClosestHex(Vector3 worldPosition)
+        {
+            worldPosition.y = 0;
+            Debug.Log(worldPosition);
+            return HexCoordinates.ConvertPositionToOffset(worldPosition);
         }
     }
 }
