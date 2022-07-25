@@ -7,7 +7,7 @@ namespace MerchantOfBohemia
 {
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
-        public static Enums.GameState GameState;
+        public static Enums.GameState GameState = Enums.GameState.Idle;
         private void OnEnable()
         {
             EventHandler.MovementStartedEvent += ChangeGameStateToTraveling;

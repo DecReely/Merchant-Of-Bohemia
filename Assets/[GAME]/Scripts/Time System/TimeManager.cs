@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MerchantOfBohemia
@@ -14,6 +16,18 @@ namespace MerchantOfBohemia
         private bool _gameClockPaused;
         private float _gameTick;
 
+        private void OnEnable()
+        {
+            EventHandler.MovementFinishedEvent += PauseGame;
+            EventHandler.MovementStartedEvent += ResumeGame;
+        }
+        
+        private void OnDisable()
+        {
+            EventHandler.MovementFinishedEvent -= PauseGame;
+            EventHandler.MovementStartedEvent -= ResumeGame;
+        }
+
         private void Start()
         { 
             // Starting Conditions
@@ -24,8 +38,11 @@ namespace MerchantOfBohemia
             _gameSeason = CalculateGameSeason();
             _timeInterval = CalculateTimeInterval();
             
-            _gameClockPaused = false;
+            _gameClockPaused = true;
             _gameTick = 0f;
+            
+            //Calling the method once to change game clock UI.
+            GameTick();
         }
 
         private void Update()
@@ -140,6 +157,16 @@ namespace MerchantOfBohemia
                 default:
                     return Enums.Season.Winter;
             }
+        }
+
+        private void PauseGame(PlayerMovement player)
+        {
+            _gameClockPaused = true;
+        }
+
+        private void ResumeGame(PlayerMovement player)
+        {
+            _gameClockPaused = false;
         }
     }
 }
