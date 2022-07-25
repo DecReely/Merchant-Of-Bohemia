@@ -49,24 +49,17 @@ namespace MerchantOfBohemia
         {
             if (!_isGlowing)
             {
-                Debug.Log("Yeni 3.4.1");
                 ResetGlowHighlight();
-                Debug.Log("Yeni 3.4.2");
                 foreach (Renderer renderer in _originalMaterialDictionary.Keys)
                 {
-                    Debug.Log("Yeni 3.4.3");
                     renderer.materials = _glowMaterialDictionary[renderer];
-                    Debug.Log("Yeni 3.4.4");
                 }
             }
             else
             {
-                Debug.Log("Yeni 3.4.5");
                 foreach (Renderer renderer in _originalMaterialDictionary.Keys)
                 {
-                    Debug.Log("Yeni 3.4.6");
                     renderer.materials = _originalMaterialDictionary[renderer];
-                    Debug.Log("Yeni 3.4.7");
                 }
             }
             _isGlowing = !_isGlowing;

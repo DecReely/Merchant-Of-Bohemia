@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5400745491764095554}
+  - component: {fileID: 3824337339451869410}
   - component: {fileID: 6734355764374806546}
   - component: {fileID: 6482486796129434752}
-  - component: {fileID: 3824337339451869410}
   - component: {fileID: 7066167974526720453}
   m_Layer: 6
   m_Name: Hex Hill (2)
@@ -39,6 +39,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3824337339451869410
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400745491764095555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 008bf3cac50b1a14680ce9a91f33a9b0, type: 3}
 --- !u!114 &6734355764374806546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,20 +79,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexType: 1
---- !u!64 &3824337339451869410
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5400745491764095555}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 008bf3cac50b1a14680ce9a91f33a9b0, type: 3}
 --- !u!114 &7066167974526720453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowMaterial: {fileID: 2100000, guid: c8b3e1fcf9a43f543889cbbf4ee036a6, type: 2}
-  validSpaceGlowMaterial: {fileID: 2100000, guid: f9fccdf281471384bb69e4634fbbe3fc, type: 2}
 --- !u!1001 &5400745491943058020
 PrefabInstance:
   m_ObjectHideFlags: 0

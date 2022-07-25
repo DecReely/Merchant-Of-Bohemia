@@ -7,10 +7,10 @@ using UnityEngine.Rendering.Universal;
 namespace MerchantOfBohemia
 {
     [SelectionBase]
-    public class Unit : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private float movementDuration = 1; //taşınacak, geçici.
-        [SerializeField] private float rotationDuration = 0.3f; //taşınacak, geçici.
+        [SerializeField] private float movementDuration = 1; // Player Stats'e taşınacak, geçici.
+        [SerializeField] private float rotationDuration = 0.3f; // Player Stats'e taşınacak, geçici.
 
         private GlowHighlight _glowHighlight;
         private Queue<Vector3> _pathPositions = new Queue<Vector3>();
@@ -39,9 +39,12 @@ namespace MerchantOfBohemia
 
         private IEnumerator RotationCoroutine(Vector3 endPosition, float rotationDuration)
         {
-            Quaternion startRotation = transform.rotation;
-            endPosition.y = transform.position.y;
-            Vector3 direction = endPosition - transform.position;
+            Transform _transform = transform;
+            Vector3 _position = _transform.position;
+            
+            Quaternion startRotation = _transform.rotation;
+            endPosition.y = _position.y;
+            Vector3 direction = endPosition - _position;
             Quaternion endRotation = Quaternion.LookRotation(direction, Vector3.up);;
 
             if (Mathf.Approximately(MathF.Abs(Quaternion.Dot(startRotation, endRotation)), 1.0f) == false)
@@ -81,7 +84,6 @@ namespace MerchantOfBohemia
             }
             else
             {
-                Debug.Log("Movement Finished");
                 EventHandler.CallMovementFinishedEvent(this);
             }
         }

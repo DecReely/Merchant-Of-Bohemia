@@ -8,7 +8,6 @@ namespace MerchantOfBohemia
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         public static Enums.GameState GameState;
-        public bool asd;
         private void OnEnable()
         {
             EventHandler.MovementStartedEvent += ChangeGameStateToTraveling;
@@ -21,12 +20,12 @@ namespace MerchantOfBohemia
             EventHandler.MovementFinishedEvent -= ChangeGameStateToIdle;
         }
 
-        private void ChangeGameStateToIdle(Unit player)
+        private void ChangeGameStateToIdle(PlayerMovement player)
         {
             GameState = Enums.GameState.Idle;
         }
 
-        private void ChangeGameStateToTraveling(Unit player)
+        private void ChangeGameStateToTraveling(PlayerMovement player)
         {
             GameState = Enums.GameState.Traveling;
         }

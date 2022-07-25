@@ -70,7 +70,6 @@ namespace MerchantOfBohemia
         public Vector3Int GetClosestHex(Vector3 worldPosition)
         {
             worldPosition.y = 0;
-            Debug.Log(worldPosition);
             return HexCoordinates.ConvertPositionToOffset(worldPosition);
         }
     }

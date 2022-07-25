@@ -20,9 +20,9 @@ namespace MerchantOfBohemia
             _movementRange = new BFSResult();
         }
         
-        public void ShowRange(Unit selectedUnit, HexGrid hexGrid)
+        public void ShowRange(PlayerMovement playerMovement, HexGrid hexGrid)
         {
-            CalculateRange(selectedUnit, hexGrid);
+            CalculateRange(playerMovement, hexGrid);
             
             foreach (Vector3Int hexPosition in _movementRange.GetRangePositions())
             {
@@ -30,9 +30,9 @@ namespace MerchantOfBohemia
             }
         }
 
-        public void CalculateRange(Unit selectedUnit, HexGrid hexGrid)
+        public void CalculateRange(PlayerMovement playerMovement, HexGrid hexGrid)
         {
-            _movementRange = GraphSearch.BFSGetRange(hexGrid, hexGrid.GetClosestHex(selectedUnit.transform.position));
+            _movementRange = GraphSearch.BFSGetRange(hexGrid, hexGrid.GetClosestHex(playerMovement.transform.position));
         }
 
         public void ShowPath(Vector3Int selectedHexPosition, HexGrid hexGrid)
@@ -53,9 +53,9 @@ namespace MerchantOfBohemia
             }
         }
 
-        public void MoveUnit(Unit selectedUnit, HexGrid hexGrid)
+        public void MovePlayer(PlayerMovement playerMovement, HexGrid hexGrid)
         {
-            selectedUnit.MoveThroughPath(_currentPath.Select(pos => hexGrid.GetTileAt(pos).transform.position).ToList());
+            playerMovement.MoveThroughPath(_currentPath.Select(pos => hexGrid.GetTileAt(pos).transform.position).ToList());
         }
 
         public bool IsHexInRange(Vector3Int hexPosition)

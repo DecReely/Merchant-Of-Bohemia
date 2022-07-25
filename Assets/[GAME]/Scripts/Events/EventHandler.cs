@@ -87,17 +87,17 @@ namespace MerchantOfBohemia
         #region Movement
         
         // Movement Started
-        public static event Action<Unit> MovementStartedEvent;
+        public static event Action<PlayerMovement> MovementStartedEvent;
 
-        public static void CallMovementStartedEvent(Unit playerMovement)
+        public static void CallMovementStartedEvent(PlayerMovement playerMovement)
         {
             MovementStartedEvent?.Invoke(playerMovement);
         }
 
         // Movement Finished
-        public static event Action<Unit> MovementFinishedEvent;
+        public static event Action<PlayerMovement> MovementFinishedEvent;
 
-        public static void CallMovementFinishedEvent(Unit playerMovement)
+        public static void CallMovementFinishedEvent(PlayerMovement playerMovement)
         {
             MovementFinishedEvent?.Invoke(playerMovement);
         }
